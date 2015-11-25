@@ -1,0 +1,22 @@
+{
+  "framework": "mocha",
+  "serve_files": [ "index.js"],
+  "src_files": [
+    "test/setup.js",
+    "test/*.test.js"
+  ],
+  "launchers": {
+    "node": {
+      "command": "NODE_PATH=./src ./node_modules/.bin/mocha -r test/setup.js -R tap test/**/*.test.js",
+      "protocol": "tap"
+    }
+  },
+  "before_tests": "echo \"Starting tests\"",
+  "after_tests": "echo \"Tests finished\"",
+  "launch_in_dev": [
+    "node"
+  ],
+  "launch_in_ci": [
+    "node"
+  ]
+}
